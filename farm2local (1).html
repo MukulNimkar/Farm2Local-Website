@@ -817,6 +817,191 @@ html {
   color: #ffffff;
 }
 
+/* --------------------------------------------------------------------------
+   Enhanced Login, Sign Up & Demonstration-Only Access (#login .lc)
+   -------------------------------------------------------------------------- */
+#login.lg {
+  padding: 24px 16px 40px;
+}
+
+#login .lc {
+  max-width: 480px;
+  padding: 28px 26px;
+  box-shadow: var(--f2l-shadow-md);
+}
+
+@media (max-width: 520px) {
+  #login .lc {
+    padding: 20px 16px;
+    border-radius: 18px;
+  }
+}
+
+.f2l-auth-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  background: #efe7d3;
+  border: 1px solid var(--f2l-line);
+  border-radius: 999px;
+  padding: 4px;
+  margin: 14px 0 16px;
+}
+
+.f2l-auth-tabs button {
+  border: 0;
+  background: transparent;
+  color: var(--f2l-ink);
+  font: 700 14px "DM Sans", sans-serif;
+  padding: 10px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.f2l-auth-tabs button.on {
+  background: var(--f2l-green);
+  color: #ffffff;
+}
+
+.f2l-auth-switch-note {
+  text-align: center;
+  font-size: 13.5px;
+  color: var(--f2l-mute);
+  margin: 12px 0 0;
+}
+
+.f2l-link-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--f2l-green);
+  font: 700 13.5px "DM Sans", sans-serif;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.f2l-su-label {
+  display: block;
+  font-size: 13px;
+  color: var(--f2l-mute);
+  margin-top: 8px;
+}
+
+.f2l-demo-box {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1.5px dashed var(--f2l-line);
+}
+
+.f2l-demo-box__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--f2l-amber-light);
+  color: #6e4810;
+  border: 1px solid #ead2a8;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font: 700 11.5px "DM Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 8px;
+}
+
+.f2l-demo-box__desc {
+  margin: 0 0 12px;
+  font-size: 13.5px;
+  color: var(--f2l-ink);
+}
+
+.f2l-demo-box__btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 440px) {
+  .f2l-demo-box__btns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.f2l-demo-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 3px;
+  padding: 11px 13px;
+  border-radius: 14px;
+  cursor: pointer;
+  border: 1.5px solid var(--f2l-green);
+  background: var(--f2l-green-tint);
+  color: var(--f2l-ink);
+  font-family: "DM Sans", sans-serif;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.f2l-demo-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--f2l-shadow-sm);
+  background: var(--f2l-green-light);
+}
+
+.f2l-demo-btn--farm {
+  border-color: var(--f2l-amber);
+  background: var(--f2l-amber-light);
+}
+
+.f2l-demo-btn--farm:hover {
+  background: #f6e7cb;
+}
+
+.f2l-demo-btn strong {
+  font-size: 14px;
+  color: var(--f2l-ink);
+}
+
+.f2l-demo-btn small {
+  font-size: 11.5px;
+  line-height: 1.3;
+  color: var(--f2l-mute);
+}
+
+.f2l-demo-disclaimer {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f7f2e6;
+  border: 1px solid var(--f2l-line);
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--f2l-mute);
+}
+
+.f2l-portal-bar__chip--logout {
+  background: #b3261e;
+  border-color: #ffb4ab;
+  color: #ffffff;
+}
+
+.f2l-portal-bar__chip--logout:hover {
+  background: #8c1d18;
+}
+
+#app header button[data-logout] {
+  border-color: #b3261e;
+  color: #b3261e;
+  font-weight: 700;
+}
+
+#app header button[data-logout]:hover {
+  background: #fceeee;
+}
+
+
 </style></head><body>
 <div id="f2l-home" class="f2l-home">
   <!-- Compact Navigation Bar (Only 4 Public Pages: Home, Shop, For Farmers, About & Contact) -->
@@ -836,7 +1021,8 @@ html {
 
       <div class="f2l-nav-actions">
         <button type="button" class="f2l-btn f2l-btn--sm" data-open-portal="customer">Customer Login</button>
-        <button type="button" class="f2l-btn f2l-btn--primary f2l-btn--sm" data-open-portal="farmer">Farmer Login</button>
+        <button type="button" class="f2l-btn f2l-btn--amber f2l-btn--sm" data-open-portal="farmer">Farmer Login</button>
+        <button type="button" class="f2l-btn f2l-btn--primary f2l-btn--sm" data-open-portal="signup">Sign Up</button>
       </div>
 
       <button type="button" class="f2l-menu-btn" id="f2l-menu-btn" aria-expanded="false" aria-controls="f2l-mobile-nav" aria-label="Toggle navigation menu">
@@ -854,7 +1040,8 @@ html {
       </ul>
       <div class="f2l-mobile-nav__btns">
         <button type="button" class="f2l-btn f2l-btn--sm" data-open-portal="customer">Customer Login</button>
-        <button type="button" class="f2l-btn f2l-btn--primary f2l-btn--sm" data-open-portal="farmer">Farmer Login</button>
+        <button type="button" class="f2l-btn f2l-btn--amber f2l-btn--sm" data-open-portal="farmer">Farmer Login</button>
+        <button type="button" class="f2l-btn f2l-btn--primary f2l-btn--sm" style="grid-column:1 / -1" data-open-portal="signup">Sign Up (Demo Account)</button>
       </div>
     </div>
   </div>
@@ -1155,24 +1342,92 @@ html {
   </footer>
 </div>
 
-<!-- Untouched Login, Customer & Farmer Application Portal Wrapper -->
+<!-- Application Portal Wrapper (Login, Sign Up, Demo Login & Dashboards) -->
 <div id="f2l-portal" hidden>
   <div class="f2l-portal-bar">
     <div class="f2l-portal-bar__inner">
       <button type="button" class="f2l-portal-bar__back" data-back-home="1">
         ← Back to Farm2Local Website
       </button>
-      <div class="f2l-portal-bar__switch">
-        <button type="button" class="f2l-portal-bar__chip" data-open-portal="customer">Customer Login</button>
-        <button type="button" class="f2l-portal-bar__chip" data-open-portal="farmer">Farmer Login</button>
+      <div class="f2l-portal-bar__switch" id="f2l-portal-guest-actions">
+        <button type="button" class="f2l-portal-bar__chip" data-auth-mode="login">Log In</button>
+        <button type="button" class="f2l-portal-bar__chip" data-auth-mode="signup">Sign Up</button>
+        <button type="button" class="f2l-portal-bar__chip" data-demo-login="c">🛒 Customer Demo</button>
+        <button type="button" class="f2l-portal-bar__chip" data-demo-login="f">🌾 Farmer Demo</button>
+      </div>
+      <div class="f2l-portal-bar__switch" id="f2l-portal-user-actions" hidden>
+        <span id="f2l-portal-user-label" style="font-size:13px;font-weight:600;padding:4px 8px;opacity:0.95"></span>
+        <button type="button" class="f2l-portal-bar__chip f2l-portal-bar__chip--logout" data-logout="1">
+          🚪 Log Out (Return to Login)
+        </button>
       </div>
     </div>
   </div>
-<div id="login" class="lg"><div class="lc"><div class="logo">🌱 Farm2Local</div><h1 style="font-size:28px;margin:10px 0 4px">Welcome back</h1><p style="margin:0 0 6px;color:var(--mute)">Log in to see your own page.</p>
-<div class="seg" id="lseg" style="--n:2;--i:0"><button class="on" data-lt="0">🛒 Customer</button><button data-lt="1">🌾 Farmer</button></div>
-<label>Username<input id="lu" autocomplete="username"></label><label>Password<input id="lp" type="password" autocomplete="current-password"></label>
-<p id="le" style="color:#b3261e;min-height:20px;margin:6px 0"></p><button class="btn solid" style="width:100%" data-login="1">Log in</button>
-<p class="note" id="lh"></p></div></div>
+<div id="login" class="lg"><div class="lc">
+  <div class="logo">🌱 Farm2Local</div>
+
+  <!-- Login / Sign Up Mode Switcher -->
+  <div class="f2l-auth-tabs" role="tablist" aria-label="Authentication mode">
+    <button type="button" class="on" data-auth-tab="login" data-auth-mode="login">Log In</button>
+    <button type="button" data-auth-tab="signup" data-auth-mode="signup">Sign Up</button>
+  </div>
+
+  <!-- 1. LOGIN FORM -->
+  <div id="f2l-login-view">
+    <h1 style="font-size:26px;margin:4px 0 4px">Welcome back</h1>
+    <p style="margin:0 0 8px;color:var(--mute);font-size:14px">Log in to your Customer or Farmer account.</p>
+    <div class="seg" id="lseg" style="--n:2;--i:0"><button type="button" class="on" data-lt="0">🛒 Customer</button><button type="button" data-lt="1">🌾 Farmer</button></div>
+    <label for="lu">Email or Username<input id="lu" autocomplete="username" placeholder="Enter your email or username"></label>
+    <label for="lp">Password<input id="lp" type="password" autocomplete="current-password" placeholder="Enter password"></label>
+    <p id="le" role="status" style="color:#b3261e;min-height:20px;margin:6px 0;font-size:13.5px;font-weight:600"></p>
+    <button type="button" class="btn solid" style="width:100%" data-login="1">Log in</button>
+    <p class="note" id="lh"></p>
+    <p class="f2l-auth-switch-note">New here? <button type="button" class="f2l-link-btn" data-auth-mode="signup">Create a demo account (Sign Up)</button></p>
+  </div>
+
+  <!-- 2. SIGN UP FORM -->
+  <div id="f2l-signup-view" hidden>
+    <h1 style="font-size:26px;margin:4px 0 4px">Create Demo Account</h1>
+    <p style="margin:0 0 8px;color:var(--mute);font-size:14px">Register in this browser to open your Customer or Farmer dashboard.</p>
+    <form id="f2l-signup-form" novalidate>
+      <label for="su-name">Full Name<input id="su-name" type="text" required autocomplete="name" placeholder="Enter your full name"></label>
+      <label for="su-email">Email<input id="su-email" type="email" required autocomplete="email" placeholder="you@college.edu"></label>
+      <label for="su-pass">Password <small style="color:#8a5a14;font-weight:500">(Demo only — do not use a real password)</small><input id="su-pass" type="password" required autocomplete="new-password" placeholder="Create a demo password"></label>
+      <label for="su-confirm">Confirm Password<input id="su-confirm" type="password" required autocomplete="new-password" placeholder="Confirm demo password"></label>
+      <span class="f2l-su-label">Account Type</span>
+      <div class="seg" id="su-lseg" style="--n:2;--i:0;margin:6px 0 8px">
+        <button type="button" class="on" data-su-role="c">🛒 Customer</button>
+        <button type="button" data-su-role="f">🌾 Farmer</button>
+      </div>
+      <input type="hidden" id="su-role" value="c">
+      <p id="su-err" role="alert" style="color:#b3261e;min-height:20px;margin:6px 0;font-size:13.5px;font-weight:600"></p>
+      <button type="submit" class="btn solid" style="width:100%" id="su-submit">Sign Up &amp; Open Dashboard</button>
+    </form>
+    <p class="f2l-auth-switch-note">Already registered? <button type="button" class="f2l-link-btn" data-auth-mode="login">Log In here</button></p>
+  </div>
+
+  <!-- 3. DEMONSTRATION-ONLY QUICK ACCESS FOR PROFESSOR / EVALUATOR -->
+  <div class="f2l-demo-box" aria-label="Demonstration-only quick login">
+    <div class="f2l-demo-box__badge">🎓 Demonstration-Only Quick Login</div>
+    <p class="f2l-demo-box__desc">
+      <strong>For Professor / Project Evaluation:</strong> Explore either dashboard immediately without registering.
+    </p>
+    <div class="f2l-demo-box__btns">
+      <button type="button" class="f2l-demo-btn f2l-demo-btn--cust" data-demo-login="c">
+        <strong>🛒 Customer Demo</strong>
+        <small>Opens Customer Shopping Dashboard</small>
+      </button>
+      <button type="button" class="f2l-demo-btn f2l-demo-btn--farm" data-demo-login="f">
+        <strong>🌾 Farmer Demo</strong>
+        <small>Opens Farmer Listings, Forecasting &amp; Alerts</small>
+      </button>
+    </div>
+    <p class="f2l-demo-disclaimer">
+      <strong>⚠️ Demonstration-Only &amp; localStorage Notice:</strong> These demo accounts are for academic demonstration only. Accounts created via Sign Up are saved locally in this browser’s <code>localStorage</code> (browser-specific, with no backend server or database) and are not secure production authentication. Do not enter real or sensitive passwords.
+    </p>
+  </div>
+</div></div>
+
 <div class="wrap" id="app" hidden>
 <header><span class="logo">🌱 Farm2Local</span><span class="who"><span id="uname"></span><button class="btn" data-logout="1">Log out</button></span></header>
 <div class="seg" id="tabs"></div>
@@ -1349,10 +1604,11 @@ view();
 </script>
 <script>
 /* ==========================================================================
-   Farm2Local Public Website Script (script.js)
-   Routes the 4 public pages (Home, Shop, For Farmers, About & Contact),
-   populates sample vegetable previews, and connects to the existing
-   Customer and Farmer application views.
+   Farm2Local Public Website & Demo Authentication Script (script.js)
+   - Routes the 4 public pages (Home, Shop, For Farmers, About & Contact)
+   - Adds Login, Sign Up (saved in browser localStorage), and 1-Click
+     Customer Demo / Farmer Demo access for college project evaluation
+   - Preserves all existing Customer Shop and Farmer Dashboard features
    ========================================================================== */
 
 (function () {
@@ -1362,16 +1618,296 @@ view();
   const menuBtnEl = document.getElementById("f2l-menu-btn");
 
   const PAGES = ["home", "shop", "farmers", "about"];
+  const DEMO_USERS_KEY = "f2l_demo_accounts";
   let currentPage = "home";
+  let authMode = "login"; // "login" or "signup"
+  let signupRole = "c";   // "c" (Customer) or "f" (Farmer)
 
-  // 1. Populate the 4 Featured Produce Cards on Home from embedded IMG data
+  // --------------------------------------------------------------------------
+  // 1. Seed Default Farmer Vegetable Listings for Demo Evaluation
+  // --------------------------------------------------------------------------
+  function ensureDemoFarmerListings() {
+    if (typeof S === "undefined" || !Array.isArray(S.lst)) return;
+    if (S.lst.length === 0) {
+      const d1 = typeof addD === "function" ? addD(1).toISOString().slice(0, 10) : "2026-10-30";
+      const d2 = typeof addD === "function" ? addD(2).toISOString().slice(0, 10) : "2026-10-31";
+      S.lst.push(
+        { n: "Cherry Tomato", q: 25, d: d1, o: true },
+        { n: "Bell Pepper (Capsicum)", q: 30, d: d1, o: true },
+        { n: "Carrot (Bunch with tops)", q: 40, d: d2, o: true }
+      );
+      if (typeof save === "function") save();
+    }
+  }
+
+  // --------------------------------------------------------------------------
+  // 2. Browser localStorage Demo Account Helpers (No Plain-Text Passwords)
+  // --------------------------------------------------------------------------
+  function demoHash(input) {
+    const raw = "f2l_demo_salt::" + String(input || "");
+    if (typeof hash === "function") {
+      return "demo_" + hash(raw).toString(16);
+    }
+    let h = 2166136261;
+    for (let i = 0; i < raw.length; i++) {
+      h ^= raw.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return "demo_" + (h >>> 0).toString(16);
+  }
+
+  function getSavedDemoAccounts() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(DEMO_USERS_KEY) || "[]");
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveDemoAccount(account) {
+    const existing = getSavedDemoAccounts().filter(
+      a => (a.email || "").toLowerCase() !== account.email.toLowerCase()
+    );
+    existing.push(account);
+    try {
+      localStorage.setItem(DEMO_USERS_KEY, JSON.stringify(existing));
+    } catch (e) {}
+  }
+
+  // --------------------------------------------------------------------------
+  // 3. Login / Sign Up UI Mode & Role Switchers
+  // --------------------------------------------------------------------------
+  function updatePortalTopBar() {
+    const loggedIn = typeof S !== "undefined" && !!S.user;
+    const guestBtns = document.getElementById("f2l-portal-guest-actions");
+    const userBtns = document.getElementById("f2l-portal-user-actions");
+    const activeUserLabel = document.getElementById("f2l-portal-user-label");
+
+    if (guestBtns) guestBtns.hidden = loggedIn;
+    if (userBtns) userBtns.hidden = !loggedIn;
+    if (activeUserLabel && loggedIn && S.user) {
+      activeUserLabel.textContent = S.user.name + " (" + (S.user.role === "f" ? "Farmer" : "Customer") + ")";
+    }
+  }
+
+  function setSignupRole(roleCode) {
+    signupRole = roleCode === "f" ? "f" : "c";
+    const segEl = document.getElementById("su-lseg");
+    const hiddenInput = document.getElementById("su-role");
+    if (segEl) {
+      segEl.style.cssText = `--n:2;--i:${signupRole === "f" ? 1 : 0};margin:6px 0 8px`;
+    }
+    if (hiddenInput) {
+      hiddenInput.value = signupRole;
+    }
+    document.querySelectorAll("[data-su-role]").forEach(btn => {
+      btn.classList.toggle("on", btn.getAttribute("data-su-role") === signupRole);
+    });
+  }
+
+  function setAuthMode(mode, preferredRole) {
+    authMode = mode === "signup" ? "signup" : "login";
+    const loginView = document.getElementById("f2l-login-view");
+    const signupView = document.getElementById("f2l-signup-view");
+    const loginErr = document.getElementById("le");
+    const signupErr = document.getElementById("su-err");
+
+    if (loginView) loginView.hidden = authMode !== "login";
+    if (signupView) signupView.hidden = authMode !== "signup";
+    if (loginErr) loginErr.textContent = "";
+    if (signupErr) signupErr.textContent = "";
+
+    document.querySelectorAll("[data-auth-tab]").forEach(tabBtn => {
+      tabBtn.classList.toggle("on", tabBtn.getAttribute("data-auth-tab") === authMode);
+    });
+
+    if (preferredRole === "farmer" || preferredRole === "f") {
+      setSignupRole("f");
+      const farmerTabBtn = document.querySelector('[data-lt="1"]');
+      if (farmerTabBtn) farmerTabBtn.click();
+    } else if (preferredRole === "customer" || preferredRole === "c") {
+      setSignupRole("c");
+      const customerTabBtn = document.querySelector('[data-lt="0"]');
+      if (customerTabBtn) customerTabBtn.click();
+    }
+  }
+
+  // --------------------------------------------------------------------------
+  // 4. Enhanced Login, Sign Up & 1-Click Demo Login Logic
+  // --------------------------------------------------------------------------
+  function completeAuthSession(userObj) {
+    if (typeof S === "undefined") return;
+    ensureDemoFarmerListings();
+    S.user = userObj;
+    if (typeof tab !== "undefined") tab = 0;
+    if (typeof lt !== "undefined") lt = userObj.role === "f" ? 1 : 0;
+    if (typeof save === "function") save();
+    if (typeof view === "function") view();
+    if (typeof render === "function") render();
+    updatePortalTopBar();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  // Override global login() to support both localStorage accounts and built-in demo accounts
+  window.login = function () {
+    const luEl = document.getElementById("lu");
+    const lpEl = document.getElementById("lp");
+    const leEl = document.getElementById("le");
+    if (!luEl || !lpEl || !leEl) return;
+
+    const idVal = luEl.value.trim().toLowerCase();
+    const pwVal = lpEl.value;
+
+    if (!idVal || !pwVal) {
+      leEl.style.color = "#b3261e";
+      leEl.textContent = "Please enter your email/username and password.";
+      return;
+    }
+
+    // 1. Check browser localStorage registered demo accounts
+    const savedAccounts = getSavedDemoAccounts();
+    const pwToken = demoHash(pwVal);
+    const savedMatch = savedAccounts.find(
+      a =>
+        ((a.email && a.email.toLowerCase() === idVal) ||
+          (a.name && a.name.toLowerCase() === idVal)) &&
+        a.passToken === pwToken
+    );
+
+    if (savedMatch) {
+      leEl.textContent = "";
+      lpEl.value = "";
+      completeAuthSession({
+        name: savedMatch.name + " (Demo)",
+        role: savedMatch.role === "f" ? "f" : "c",
+        email: savedMatch.email,
+        isDemo: true
+      });
+      return;
+    }
+
+    // 2. Check built-in demo accounts (anita / ramesh or demo email aliases)
+    const builtInAliases = {
+      "anita": { p: "anita123", role: "c", name: "Anita (Customer Demo)" },
+      "customer@demo.com": { p: "anita123", role: "c", name: "Anita (Customer Demo)" },
+      "ramesh": { p: "farm123", role: "f", name: "Ramesh (Farmer Demo)" },
+      "farmer@demo.com": { p: "farm123", role: "f", name: "Ramesh (Farmer Demo)" }
+    };
+
+    const builtIn = (typeof ACC !== "undefined" && ACC[idVal]) || builtInAliases[idVal];
+    if (builtIn && builtIn.p === pwVal) {
+      leEl.textContent = "";
+      lpEl.value = "";
+      completeAuthSession({
+        name: builtIn.name.includes("Demo") ? builtIn.name : builtIn.name + " (Demo)",
+        role: builtIn.role,
+        isDemo: true
+      });
+      return;
+    }
+
+    leEl.style.color = "#b3261e";
+    leEl.textContent = "Invalid credentials. Use the Quick Demo buttons below or Sign Up first.";
+  };
+
+  function handleSignupSubmit(e) {
+    if (e) e.preventDefault();
+    const nameEl = document.getElementById("su-name");
+    const emailEl = document.getElementById("su-email");
+    const passEl = document.getElementById("su-pass");
+    const confirmEl = document.getElementById("su-confirm");
+    const roleEl = document.getElementById("su-role");
+    const errEl = document.getElementById("su-err");
+
+    if (!nameEl || !emailEl || !passEl || !confirmEl || !errEl) return;
+
+    const fullName = nameEl.value.trim();
+    const email = emailEl.value.trim().toLowerCase();
+    const pass = passEl.value;
+    const confirmPass = confirmEl.value;
+    const acctRole = (roleEl && roleEl.value === "f") || signupRole === "f" ? "f" : "c";
+
+    errEl.style.color = "#b3261e";
+
+    if (!fullName) {
+      errEl.textContent = "Please enter your Full Name.";
+      nameEl.focus();
+      return;
+    }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      errEl.textContent = "Please enter a valid Email address.";
+      emailEl.focus();
+      return;
+    }
+    if (!pass) {
+      errEl.textContent = "Please enter a demo Password.";
+      passEl.focus();
+      return;
+    }
+    if (pass.length < 4) {
+      errEl.textContent = "Password must be at least 4 characters long.";
+      passEl.focus();
+      return;
+    }
+    if (!confirmPass) {
+      errEl.textContent = "Please confirm your Password.";
+      confirmEl.focus();
+      return;
+    }
+    if (pass !== confirmPass) {
+      errEl.textContent = "Passwords do not match. Please re-enter both passwords.";
+      confirmEl.focus();
+      return;
+    }
+
+    // Save demo account in browser localStorage (with non-reversible demo hash)
+    saveDemoAccount({
+      name: fullName,
+      email: email,
+      role: acctRole,
+      passToken: demoHash(pass),
+      isDemo: true,
+      createdAt: new Date().toISOString()
+    });
+
+    errEl.textContent = "";
+    const signupForm = document.getElementById("f2l-signup-form");
+    if (signupForm) signupForm.reset();
+    setSignupRole(acctRole);
+
+    // Direct Customer to Customer Dashboard and Farmer to Farmer Dashboard
+    completeAuthSession({
+      name: fullName + " (Demo)",
+      role: acctRole,
+      email: email,
+      isDemo: true
+    });
+  }
+
+  function startDemoLogin(roleCode) {
+    if (homeEl && portalEl) {
+      homeEl.hidden = true;
+      portalEl.hidden = false;
+    }
+    const isFarmer = roleCode === "f" || roleCode === "farmer";
+    completeAuthSession({
+      name: isFarmer ? "Ramesh (Farmer Demo)" : "Anita (Customer Demo)",
+      role: isFarmer ? "f" : "c",
+      isDemo: true
+    });
+  }
+
+  // --------------------------------------------------------------------------
+  // 5. Public Website Helpers (Hero Images, Shop Preview, Page Router)
+  // --------------------------------------------------------------------------
   function initHeroImages() {
     if (typeof IMG === "undefined") return;
     const mapping = [
-      ["hero-img-tomato", 9],    // Cherry Tomato
-      ["hero-img-pepper", 21],   // Bell Pepper
-      ["hero-img-carrot", 18],   // Bunch Carrots
-      ["hero-img-coriander", 24] // Coriander
+      ["hero-img-tomato", 9],
+      ["hero-img-pepper", 21],
+      ["hero-img-carrot", 18],
+      ["hero-img-coriander", 24]
     ];
     mapping.forEach(([id, imgKey]) => {
       const el = document.getElementById(id);
@@ -1381,7 +1917,6 @@ view();
     });
   }
 
-  // 2. Render Compact Selected Vegetables Preview on the Shop Page
   const SELECTED_VEGETABLES = [
     { name: "Carrot (Bunch with tops)", img: 18, farm: "Porvorim Kitchen Garden", price: 65, org: true },
     { name: "Cherry Tomato", img: 9, farm: "Calangute Polyhouse", price: 110, org: true },
@@ -1411,7 +1946,6 @@ view();
     }).join("");
   }
 
-  // 3. Switch Between the 4 Public Pages
   function showPage(pageId, updateHash) {
     const valid = PAGES.includes(pageId) ? pageId : "home";
     currentPage = valid;
@@ -1451,8 +1985,7 @@ view();
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  // 4. Open Untouched Customer / Farmer Application Portal
-  function openPortal(targetRole) {
+  function openPortal(targetAction) {
     if (!homeEl || !portalEl) return;
     homeEl.hidden = true;
     portalEl.hidden = false;
@@ -1462,22 +1995,30 @@ view();
       if (menuBtnEl) menuBtnEl.setAttribute("aria-expanded", "false");
     }
 
-    if (typeof S !== "undefined" && S.user) {
-      if ((targetRole === "customer" && S.user.role !== "c") ||
-          (targetRole === "farmer" && S.user.role !== "f")) {
-        const logoutBtn = document.querySelector("[data-logout]");
-        if (logoutBtn) logoutBtn.click();
+    if (targetAction === "signup") {
+      if (typeof S !== "undefined" && S.user) {
+        S.user = null;
+        if (typeof save === "function") save();
+        if (typeof view === "function") view();
       }
+      setAuthMode("signup", "c");
+    } else if (targetAction === "farmer") {
+      if (typeof S !== "undefined" && S.user && S.user.role !== "f") {
+        S.user = null;
+        if (typeof save === "function") save();
+        if (typeof view === "function") view();
+      }
+      setAuthMode("login", "farmer");
+    } else {
+      if (typeof S !== "undefined" && S.user && S.user.role !== "c") {
+        S.user = null;
+        if (typeof save === "function") save();
+        if (typeof view === "function") view();
+      }
+      setAuthMode("login", "customer");
     }
 
-    if (targetRole === "farmer") {
-      const farmerTabBtn = document.querySelector('[data-lt="1"]');
-      if (farmerTabBtn) farmerTabBtn.click();
-    } else if (targetRole === "customer") {
-      const customerTabBtn = document.querySelector('[data-lt="0"]');
-      if (customerTabBtn) customerTabBtn.click();
-    }
-
+    updatePortalTopBar();
     if (typeof movePill === "function") {
       setTimeout(movePill, 50);
     }
@@ -1491,8 +2032,55 @@ view();
     showPage(currentPage || "home", false);
   }
 
-  // 5. Event Listeners
+  // --------------------------------------------------------------------------
+  // 6. Event Listeners
+  // --------------------------------------------------------------------------
   document.addEventListener("click", function (e) {
+    // Switch between Login and Sign Up tabs
+    const authTabTrigger = e.target.closest("[data-auth-mode]");
+    if (authTabTrigger) {
+      e.preventDefault();
+      setAuthMode(authTabTrigger.getAttribute("data-auth-mode"));
+      return;
+    }
+
+    // Switch Sign Up Account Type (Customer / Farmer)
+    const suRoleTrigger = e.target.closest("[data-su-role]");
+    if (suRoleTrigger) {
+      e.preventDefault();
+      setSignupRole(suRoleTrigger.getAttribute("data-su-role"));
+      return;
+    }
+
+    // Instant Demo Login buttons (Customer Demo / Farmer Demo)
+    const demoTrigger = e.target.closest("[data-demo-login]");
+    if (demoTrigger) {
+      e.preventDefault();
+      startDemoLogin(demoTrigger.getAttribute("data-demo-login"));
+      return;
+    }
+
+    // Logout button — returns cleanly to the Login screen
+    const logoutTrigger = e.target.closest("[data-logout]");
+    if (logoutTrigger) {
+      setTimeout(function () {
+        if (homeEl && portalEl) {
+          homeEl.hidden = true;
+          portalEl.hidden = false;
+        }
+        setAuthMode("login");
+        updatePortalTopBar();
+        const leEl = document.getElementById("le");
+        if (leEl) {
+          leEl.style.color = "#1f5a3a";
+          leEl.textContent = "Logged out successfully. You have returned to the login screen.";
+        }
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 10);
+      return;
+    }
+
+    // Open portal from public website buttons
     const portalTrigger = e.target.closest("[data-open-portal]");
     if (portalTrigger) {
       e.preventDefault();
@@ -1500,6 +2088,7 @@ view();
       return;
     }
 
+    // Return to public website
     const backTrigger = e.target.closest("[data-back-home]");
     if (backTrigger) {
       e.preventDefault();
@@ -1507,6 +2096,7 @@ view();
       return;
     }
 
+    // Public 4-page navigation
     const pageTrigger = e.target.closest("[data-page-link]");
     if (pageTrigger) {
       e.preventDefault();
@@ -1514,6 +2104,22 @@ view();
       return;
     }
   });
+
+  // Sign Up form submission
+  const signupForm = document.getElementById("f2l-signup-form");
+  if (signupForm) {
+    signupForm.addEventListener("submit", handleSignupSubmit);
+  }
+
+  // Enter key on login username input
+  const luInput = document.getElementById("lu");
+  if (luInput) {
+    luInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" && typeof window.login === "function") {
+        window.login();
+      }
+    });
+  }
 
   window.addEventListener("popstate", function () {
     const hash = (window.location.hash || "").replace(/^#/, "");
@@ -1528,7 +2134,6 @@ view();
     });
   }
 
-  // 6. Contact Form Handler on About & Contact Page
   const contactForm = document.getElementById("f2l-contact-form");
   const contactStatus = document.getElementById("f2l-contact-status");
   if (contactForm && contactStatus) {
@@ -1542,8 +2147,11 @@ view();
     });
   }
 
+  // Initialize
+  ensureDemoFarmerListings();
   initHeroImages();
   renderShopPreview();
+  updatePortalTopBar();
   const initialHash = (window.location.hash || "").replace(/^#/, "");
   showPage(PAGES.includes(initialHash) ? initialHash : "home", false);
 })();
