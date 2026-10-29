@@ -1,0 +1,734 @@
+/* ==========================================================================
+   Farm2Local Public Website Stylesheet (styles.css)
+   Scoped to .f2l-home and .f2l-portal-bar so existing #login, #app, and #modal
+   styles remain 100% untouched.
+   ========================================================================== */
+
+:root {
+  --f2l-bg: #faf6ee;
+  --f2l-bg-alt: #f3ede0;
+  --f2l-surface: #ffffff;
+  --f2l-ink: #1c2b21;
+  --f2l-mute: #55655a;
+  --f2l-line: #e3d8c2;
+  --f2l-green: #1f5a3a;
+  --f2l-green-mid: #2f7d32;
+  --f2l-green-light: #e8f3e8;
+  --f2l-green-tint: #f1f7f1;
+  --f2l-amber: #9a6f2c;
+  --f2l-amber-light: #fbf3e4;
+  --f2l-shadow-sm: 0 4px 14px rgba(28, 43, 33, 0.05);
+  --f2l-shadow-md: 0 12px 32px rgba(28, 43, 33, 0.08);
+  --f2l-radius-md: 20px;
+  --f2l-radius-lg: 26px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Top Return Bar on Portal View (#f2l-portal-bar)
+   -------------------------------------------------------------------------- */
+.f2l-portal-bar {
+  background: #163f29;
+  color: #ffffff;
+  padding: 10px 16px;
+  font: 500 14px/1.4 "DM Sans", system-ui, sans-serif;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.f2l-portal-bar__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.f2l-portal-bar__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font: 700 13px "DM Sans", sans-serif;
+  cursor: pointer;
+}
+
+.f2l-portal-bar__back:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.f2l-portal-bar__switch {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.f2l-portal-bar__chip {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  padding: 5px 12px;
+  font: 600 12.5px "DM Sans", sans-serif;
+  cursor: pointer;
+}
+
+.f2l-portal-bar__chip:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   Public Website Container & Typography (.f2l-home)
+   -------------------------------------------------------------------------- */
+.f2l-home {
+  color: var(--f2l-ink);
+  background: var(--f2l-bg);
+  font: 16px/1.55 "DM Sans", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.f2l-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.f2l-section {
+  padding: 56px 0;
+}
+
+.f2l-section--alt {
+  background: var(--f2l-bg-alt);
+  border-top: 1px solid var(--f2l-line);
+  border-bottom: 1px solid var(--f2l-line);
+}
+
+.f2l-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--f2l-green-light);
+  color: var(--f2l-green);
+  border: 1px solid #cce3cc;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font: 700 12px/1.2 "DM Sans", sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.f2l-section-header {
+  max-width: 680px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.f2l-section-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(26px, 3.6vw, 36px);
+  line-height: 1.18;
+  color: var(--f2l-ink);
+  margin: 0 0 10px;
+}
+
+.f2l-section-desc {
+  font-size: 16.5px;
+  color: var(--f2l-mute);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Compact Sticky Navigation Bar (4 Pages: Home, Shop, For Farmers, About & Contact)
+   -------------------------------------------------------------------------- */
+.f2l-nav-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 35;
+  background: rgba(250, 246, 238, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--f2l-line);
+}
+
+.f2l-nav {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.f2l-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--f2l-green);
+  font: 600 24px/1 "Fraunces", Georgia, serif;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.f2l-brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--f2l-green);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  flex-shrink: 0;
+}
+
+.f2l-nav-links {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  background: #efe7d3;
+  border: 1px solid var(--f2l-line);
+  border-radius: 999px;
+}
+
+.f2l-nav-links li {
+  display: flex;
+}
+
+.f2l-nav-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  color: var(--f2l-ink);
+  background: #ffffff;
+  border: 1px solid rgba(227, 216, 194, 0.95);
+  border-radius: 999px;
+  padding: 8px 16px;
+  text-decoration: none;
+  font: 700 13.5px/1 "DM Sans", sans-serif;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.f2l-nav-links a:hover,
+.f2l-nav-links a:focus-visible {
+  border-color: var(--f2l-green);
+  color: var(--f2l-green);
+}
+
+.f2l-nav-links a.active {
+  background: var(--f2l-green);
+  color: #ffffff;
+  border-color: var(--f2l-green);
+}
+
+.f2l-nav-actions {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.f2l-nav-actions .f2l-btn {
+  white-space: nowrap;
+}
+
+.f2l-menu-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1.5px solid var(--f2l-line);
+  background: #ffffff;
+  color: var(--f2l-ink);
+  border-radius: 12px;
+  padding: 8px 12px;
+  font: 700 14px "DM Sans", sans-serif;
+  cursor: pointer;
+}
+
+@media (min-width: 860px) {
+  .f2l-nav-links {
+    display: inline-flex;
+  }
+  .f2l-nav-actions {
+    display: flex;
+  }
+  .f2l-menu-btn {
+    display: none;
+  }
+}
+
+.f2l-mobile-nav {
+  border-top: 1px solid var(--f2l-line);
+  background: #ffffff;
+  padding: 14px 20px 18px;
+}
+
+.f2l-mobile-nav ul {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.f2l-mobile-nav a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: var(--f2l-ink);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.f2l-mobile-nav a.active {
+  background: var(--f2l-green-light);
+  color: var(--f2l-green);
+}
+
+.f2l-mobile-nav__btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+.f2l-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font: 700 14px/1.2 "DM Sans", sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1.5px solid var(--f2l-green);
+  background: #ffffff;
+  color: var(--f2l-green);
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.f2l-btn:hover {
+  transform: translateY(-1px);
+}
+
+.f2l-btn--primary {
+  background: var(--f2l-green);
+  color: #ffffff;
+  border-color: var(--f2l-green);
+}
+
+.f2l-btn--primary:hover {
+  background: #17462d;
+}
+
+.f2l-btn--amber {
+  background: var(--f2l-amber);
+  color: #ffffff;
+  border-color: var(--f2l-amber);
+}
+
+.f2l-btn--amber:hover {
+  background: #835c21;
+}
+
+.f2l-btn--sm {
+  padding: 8px 15px;
+  font-size: 13px;
+}
+
+/* --------------------------------------------------------------------------
+   Page Views & Hero Section
+   -------------------------------------------------------------------------- */
+.f2l-page-view {
+  flex: 1;
+}
+
+.f2l-hero {
+  padding: 48px 0 56px;
+}
+
+.f2l-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+@media (min-width: 920px) {
+  .f2l-hero-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 44px;
+  }
+}
+
+.f2l-hero-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(32px, 4.6vw, 50px);
+  line-height: 1.1;
+  margin: 0 0 16px;
+  color: var(--f2l-ink);
+}
+
+.f2l-hero-title em {
+  color: var(--f2l-green);
+  font-style: italic;
+}
+
+.f2l-hero-lead {
+  font-size: 17px;
+  color: var(--f2l-mute);
+  margin: 0 0 24px;
+  max-width: 560px;
+}
+
+.f2l-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* 4 Featured Produce Cards on Home */
+.f2l-hero-showcase {
+  background: #ffffff;
+  border: 1px solid var(--f2l-line);
+  border-radius: var(--f2l-radius-lg);
+  padding: 18px;
+  box-shadow: var(--f2l-shadow-md);
+}
+
+.f2l-showcase-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--f2l-line);
+  margin-bottom: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--f2l-green);
+}
+
+.f2l-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.f2l-mini-prod {
+  border: 1px solid var(--f2l-line);
+  border-radius: 14px;
+  padding: 10px;
+  background: var(--f2l-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.f2l-mini-prod img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #e9e2d0;
+}
+
+.f2l-mini-prod__meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: var(--f2l-mute);
+}
+
+.f2l-mini-prod__title {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 15.5px;
+  color: var(--f2l-ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.f2l-mini-prod__price {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  color: var(--f2l-green);
+  font-size: 14.5px;
+}
+
+/* --------------------------------------------------------------------------
+   3-Card Grids (Benefits, How It Works Steps, Farmer Cards)
+   -------------------------------------------------------------------------- */
+.f2l-three-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 760px) {
+  .f2l-three-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.f2l-card {
+  background: #ffffff;
+  border: 1px solid var(--f2l-line);
+  border-radius: var(--f2l-radius-md);
+  padding: 24px;
+  box-shadow: var(--f2l-shadow-sm);
+}
+
+.f2l-card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--f2l-green-light);
+  color: var(--f2l-green);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.f2l-card h3 {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 20px;
+  margin: 0 0 8px;
+  color: var(--f2l-ink);
+}
+
+.f2l-card p {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--f2l-mute);
+}
+
+/* --------------------------------------------------------------------------
+   Shop Page: Compact Selected Vegetables Grid
+   -------------------------------------------------------------------------- */
+.f2l-sample-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+.f2l-sample-card {
+  background: #ffffff;
+  border: 1px solid var(--f2l-line);
+  border-radius: var(--f2l-radius-md);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: var(--f2l-shadow-sm);
+}
+
+.f2l-sample-card__img-wrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: #efe9da;
+}
+
+.f2l-sample-card__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.f2l-sample-card__tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--f2l-green);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.f2l-sample-card__farm {
+  font-size: 12.5px;
+  color: var(--f2l-mute);
+}
+
+.f2l-sample-card h3 {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 18px;
+  margin: 0;
+}
+
+.f2l-sample-card__price {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--f2l-green);
+}
+
+.f2l-sample-card__price small {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--f2l-mute);
+}
+
+/* --------------------------------------------------------------------------
+   For Farmers Page & Simple Forecasting Preview
+   -------------------------------------------------------------------------- */
+.f2l-split-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (min-width: 880px) {
+  .f2l-split-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.f2l-forecast-card {
+  background: #ffffff;
+  border: 1px solid var(--f2l-line);
+  border-radius: var(--f2l-radius-md);
+  padding: 24px;
+  box-shadow: var(--f2l-shadow-sm);
+}
+
+.f2l-alert-box {
+  background: var(--f2l-amber-light);
+  border: 1px solid #ead2a8;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #4a320d;
+}
+
+.f2l-demand-row {
+  margin-bottom: 12px;
+}
+
+.f2l-demand-row__top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13.5px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.f2l-demand-bar {
+  height: 10px;
+  background: #eee8d8;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.f2l-demand-bar > span {
+  display: block;
+  height: 100%;
+  background: var(--f2l-green);
+  border-radius: 999px;
+}
+
+/* --------------------------------------------------------------------------
+   About & Contact Page Form
+   -------------------------------------------------------------------------- */
+.f2l-contact-form {
+  background: #ffffff;
+  border: 1px solid var(--f2l-line);
+  border-radius: var(--f2l-radius-md);
+  padding: 24px;
+  box-shadow: var(--f2l-shadow-sm);
+}
+
+.f2l-field {
+  margin-bottom: 14px;
+}
+
+.f2l-field label {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--f2l-ink);
+  margin-bottom: 4px;
+}
+
+.f2l-field input,
+.f2l-field select,
+.f2l-field textarea {
+  width: 100%;
+  border: 1.5px solid var(--f2l-line);
+  background: var(--f2l-bg);
+  color: var(--f2l-ink);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font: 500 14.5px "DM Sans", sans-serif;
+}
+
+.f2l-field textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* --------------------------------------------------------------------------
+   Compact Single-Row Footer
+   -------------------------------------------------------------------------- */
+.f2l-footer {
+  background: #142419;
+  color: rgba(250, 246, 238, 0.85);
+  padding: 24px 0;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+.f2l-footer-compact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.f2l-footer-brand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.f2l-footer-brand strong {
+  font: 600 20px "Fraunces", Georgia, serif;
+  color: #ffffff;
+}
